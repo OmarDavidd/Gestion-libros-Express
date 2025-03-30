@@ -1,0 +1,13 @@
+# Archivos que deben ignorarse
+node_modules/
+.env
+.DS_Store
+*.log
+database.sqlite
+.idea/
+.vscode/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
