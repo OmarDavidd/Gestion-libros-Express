@@ -10,7 +10,7 @@ const librosController = {
 			const resp = await librosService.getDataLibros(page)
 
 			if (!resp.msg) {
-				return res.render('boocks/libros', { title: 'Gestion de libros', libros: resp.data, paginacion: resp.pagination });
+				return res.render('boocks/listarLibros', { title: 'Gestion de libros', libros: resp.data, paginacion: resp.pagination });
 			}
 			return res.render('Error404', { title: 'GetHome', error: resp.msg });
 		} catch (error) {
@@ -19,7 +19,7 @@ const librosController = {
 	},
 
 	getFormLibro: async (req, res) => {
-		return res.render('boocks/formLibro', { title: 'Agregar libro', libro: null });
+		return res.render('boocks/formularioLibro', { title: 'Agregar libro', libro: null });
 	},
 	getFormLibroEditar: async (req, res) => {
 		try {
@@ -27,7 +27,7 @@ const librosController = {
 			if (resp.msg) {
 				return res.render('Error404', { title: 'Error', error: resp.msg });
 			}
-			return res.render('boocks/formLibro', { title: 'Editar libro', libro: resp.data });
+			return res.render('boocks/formularioLibro', { title: 'Editar libro', libro: resp.data });
 		} catch (error) {
 			return res.render('Error404', { title: 'Error', error: error.message });
 		}

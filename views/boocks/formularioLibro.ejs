@@ -54,6 +54,15 @@
 	</div>
 	<script>
 		function mostrarMensaje(accion) {
+			const titulo = document.querySelector('input[name="titulo"]').value.trim();
+			const autor = document.querySelector('input[name="autor"]').value.trim();
+			const añoPublicacion = document.querySelector('input[name="año_publicacion"]').value.trim();
+			const genero = document.querySelector('input[name="genero"]').value.trim();
+
+			if (!titulo || !autor || !añoPublicacion || !genero) {
+				alert('Por favor, completa todos los campos antes de guardar.');
+				return false;
+			}
 			alert(`Libro ${accion} con éxito`);
 			return true;
 		}
